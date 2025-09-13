@@ -9,21 +9,24 @@ function App() {
   const [file, setFile] = useState(null);
   const [result, setResult] = useState(null);
 
-  const handleUpload = async () => {
-    if (!file) return alert("Please select a CSV file");
+const handleUpload = async () => {
+  if (!file) return alert("Please select a CSV file");
 
-    const formData = new FormData();
-    formData.append("file", file);
+  const formData = new FormData();
+  formData.append("file", file);
 
-    try {
-      const res = await axios.post("http://127.0.0.1:5000/predict", formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
-      setResult(res.data);
-    } catch (err) {
-      alert("Error: " + err.message);
-    }
-  };
+  try {
+    const res = await axios.post(
+      `${import.meta.env.VITE_API_URL}/predict`,
+      formData,
+      { headers: { "Content-Type": "multipart/form-data" } }
+    );
+    setResult(res.data);
+  } catch (err) {
+    alert("Error: " + err.message);
+  }
+};
+
 
   const anomalyTrend = result
     ? result.anomalies.map((a) => ({
