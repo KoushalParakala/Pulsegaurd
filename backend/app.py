@@ -9,8 +9,9 @@ import os
 # ====================
 # CONFIG
 # ====================
-BACKEND_DIR = Path(r"D:/Codes/pennyfy/backend")
-MODEL_PATH = BACKEND_DIR / "pulseguard_model.pkl"
+BASE_DIR = Path(__file__).resolve().parent
+MODEL_PATH = BASE_DIR / "pulseguard_model.pkl"
+
 DATE_COL = "Transaction Date"
 AMOUNT_COL = "Total Spent"
 CAT_COL = "Category"
