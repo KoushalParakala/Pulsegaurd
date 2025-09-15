@@ -54,7 +54,7 @@ const handleUpload = async () => {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <h1 className="text-4xl font-extrabold text-center mb-10 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
-          📊 PulseGuard Dashboard
+          Dashboard
         </h1>
 
         {/* Upload Section */}
